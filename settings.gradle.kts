@@ -1,13 +1,12 @@
 rootProject.name = "kess"
 
+include("kess-core")
+
 pluginManagement {
 	repositories {
 		google()
 		mavenCentral()
 		gradlePluginPortal()
-	}
-	plugins {
-		kotlin("jvm") version "1.9.22"
 	}
 }
 
@@ -30,7 +29,6 @@ dependencyResolutionManagement {
 		create("various") {
 			plugin("android", "com.android.library").version("7.4.2")
 			plugin("detekt", "io.gitlab.arturbosch.detekt").version("1.23.5")
-			plugin("spotless", "com.diffplug.spotless").version("6.25.0")
 			plugin("github", "com.github.breadmoirai.github-release").version("2.5.2")
 		}
 	}
