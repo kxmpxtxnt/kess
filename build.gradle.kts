@@ -13,3 +13,9 @@ allprojects {
         gradlePluginPortal()
     }
 }
+
+subprojects {
+    apply(plugin = "kotlin-multiplatform")
+    apply(plugin = "kotlinx-serialization")
+    configureTargets()
+}
