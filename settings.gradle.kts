@@ -6,7 +6,8 @@ rootProject.name = "kess"
 
 include(
     "kess-board",
-    "kess-util"
+    "kess-util",
+    "kess-fen"
 )
 
 pluginManagement {
