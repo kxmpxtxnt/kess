@@ -4,22 +4,24 @@
 
 package fyi.pauli.kess.board
 
+import fyi.pauli.kess.board.piece.*
 import fyi.pauli.kess.utils.serializer.*
 import kotlinx.serialization.*
 import kotlin.uuid.*
 
 @OptIn(ExperimentalUuidApi::class)
 @Serializable
-public data class Board(
+data class Board(
     @Serializable(with = UuidSerializer::class) val uuid: Uuid = Uuid.random(),
-    val fields: MutableSet<Field> = buildSet {
-        for (line in 'a'..'h') {
+    val positions: MutableSet<Position> = buildSet {
+        for (line in 1 .. 8) {
             for (row in 1..8) {
-                add(Field(line, row))
+                add(Position(line, row))
             }
         }
     }.toMutableSet(),
+    val pieces: MutableSet<Piece> = mutableSetOf()
 )
 
 @OptIn(ExperimentalUuidApi::class)
-public fun chess(init: Board.() -> Unit): Board = Board().apply(init)
+fun chess(init: Board.() -> Unit): Board = Board().apply(init)

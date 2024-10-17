@@ -10,7 +10,7 @@ import kotlinx.serialization.encoding.*
 import kotlin.uuid.*
 
 @OptIn(ExperimentalUuidApi::class)
-public object UuidSerializer : KSerializer<Uuid> {
+object UuidSerializer : KSerializer<Uuid> {
 
     override val descriptor: SerialDescriptor = buildClassSerialDescriptor("uuid") {
         element<Long>("msb")
