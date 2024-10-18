@@ -10,13 +10,5 @@ import org.gradle.api.*
 fun Project.jvmTarget() {
     kotlin {
         jvm()
-
-        sourceSets.apply {
-            jvmMain {
-                dependencies {
-                    api(libs.oshai.logging.jvm)
-                }
-            }
-        }
     }
 }

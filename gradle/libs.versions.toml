@@ -30,7 +30,6 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 
 # Logging
 oshai-logging = { group = "io.github.oshai", name = "kotlin-logging", version.ref = "oshai-logging" }
-oshai-logging-jvm = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "oshai-logging" }
 
 # Test
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
