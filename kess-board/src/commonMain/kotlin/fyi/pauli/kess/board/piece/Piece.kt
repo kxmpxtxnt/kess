@@ -8,23 +8,11 @@ import kotlinx.serialization.*
 
 /**
  * Structure of a piece.
- * @param colorId Character identifier for either white or black.
+ * @param character Character in uppercase representing a piece.
  * @param weight Weight of the piece.
  */
 @Serializable
 abstract class Piece(
-    val colorId: CharIdentifier,
-    val weight: Byte,
-) {
-
-    /**
-     * Structure of the character identifier.
-     * @param white Character code for a white piece.
-     * @param black Character code for a black piece.
-     */
-    @Serializable
-    data class CharIdentifier(
-        val white: Byte,
-        val black: Byte
-    )
-}
+    open var character: Char,
+    open val weight: Byte,
+)

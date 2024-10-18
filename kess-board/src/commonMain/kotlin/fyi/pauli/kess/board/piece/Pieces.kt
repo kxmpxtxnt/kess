@@ -8,7 +8,7 @@ package fyi.pauli.kess.board.piece
  * King piece with character 'k' and max weight as it is never really taken.
  */
 object King : Piece(
-    CharIdentifier(75, 107),
+    'K',
     Byte.MAX_VALUE
 )
 
@@ -16,7 +16,7 @@ object King : Piece(
  * Queen piece with character 'q' and weight of 8.
  */
 object Queen : Piece(
-    CharIdentifier(81, 113),
+    'Q',
     8
 )
 
@@ -24,7 +24,7 @@ object Queen : Piece(
  * Queen piece with character 'r' and weight of 5.
  */
 object Rook : Piece(
-    CharIdentifier(82, 114),
+    'R',
     5
 )
 
@@ -32,7 +32,7 @@ object Rook : Piece(
  * Queen piece with character 'b' and weight of 3.
  */
 object Bishop : Piece(
-    CharIdentifier(66, 98),
+    'B',
     3
 )
 
@@ -40,7 +40,7 @@ object Bishop : Piece(
  * Queen piece with character 'n' and weight of 3.
  */
 object Knight : Piece(
-    CharIdentifier(78, 110),
+    'N',
     3
 )
 
@@ -48,6 +48,6 @@ object Knight : Piece(
  * Queen piece with character 'p' and weight of 1.
  */
 object Pawn : Piece(
-    CharIdentifier(80, 112),
+    'P',
     1
 )

@@ -4,7 +4,7 @@
 
 package fyi.pauli.kess.board
 
-import fyi.pauli.kess.board.piece.*
+import fyi.pauli.kess.board.figure.*
 import fyi.pauli.kess.utils.serializer.*
 import kotlinx.serialization.*
 import kotlin.uuid.*
@@ -14,13 +14,13 @@ import kotlin.uuid.*
 data class Board(
     @Serializable(with = UuidSerializer::class) val uuid: Uuid = Uuid.random(),
     val positions: MutableSet<Position> = buildSet {
-        for (line in 1 .. 8) {
+        for (line in 1..8) {
             for (row in 1..8) {
                 add(Position(line, row))
             }
         }
     }.toMutableSet(),
-    val pieces: MutableSet<Piece> = mutableSetOf()
+    val figures: MutableList<Figure<*>> = mutableListOf()
 )
 
 @OptIn(ExperimentalUuidApi::class)
