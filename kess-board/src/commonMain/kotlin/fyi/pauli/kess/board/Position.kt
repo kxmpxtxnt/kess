@@ -42,15 +42,4 @@ data class Position(
     val id: Byte
         get() = (8 * row - (8 - line) - 1).toByte()
 
-    /**
-     * Converts [Pair] from given [Position].
-     */
-    val pair: Pair<Byte, Byte>
-        get() = Pair(line, row)
 }
-
-/**
- * Converts [Position] from given [Pair]
- */
-val Pair<Byte, Byte>.position: Position
-    get() = Position(first, second)
