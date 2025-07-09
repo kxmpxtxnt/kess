@@ -1,0 +1,43 @@
+[versions]
+kotlin = "2.2.0"
+android = "8.10.0"
+kotlinx-coroutines = "1.10.2"
+kotlinx-serialization = "1.9.0"
+oshai-logging = "7.0.7"
+
+# Used in internal/target/wasm.kt
+puppeteer = "21.5.0"
+
+[plugins]
+# Kotlin
+multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+# Google
+android-library = { id = "com.android.library", version.ref = "android" }
+android-application = { id = "com.android.application", version.ref = "android" }
+
+[libraries]
+# Kotlinx
+kotlinx-browser = { module = "org.jetbrains.kotlinx:kotlinx-browser", version = "0.2" }
+
+# Serialization
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-cbor = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-cbor", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+# Coroutines
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+
+# Logging
+oshai-logging = { group = "io.github.oshai", name = "kotlin-logging", version.ref = "oshai-logging" }
+
+# Test
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+[bundles]
+kotlinx-serialization = [
+    "kotlinx-serialization-core",
+    "kotlinx-serialization-cbor",
+    "kotlinx-serialization-json"
+]
