@@ -1,8 +1,15 @@
 package fyi.pauli.kess.board.field
 
-const val EMPTY_FIELD = 0
+import fyi.pauli.kess.figure.*
+import kotlin.jvm.*
 
-value class Field(private val content: Int) {
+const val EMPTY_FIELD: Int = 0
+
+@JvmInline
+value class Field(val content: Int) {
+
+    val figure: Figure?
+        get() = if (isEmpty) null else Figure(content)
 
     val isEmpty: Boolean get() = content == EMPTY_FIELD
 

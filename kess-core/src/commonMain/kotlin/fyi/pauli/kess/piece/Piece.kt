@@ -1,5 +1,8 @@
 package fyi.pauli.kess.piece
 
+import kotlin.jvm.JvmInline
+
+@JvmInline
 value class Piece internal constructor(val id: Int) {
 
     val value: Int

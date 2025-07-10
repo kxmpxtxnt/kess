@@ -61,6 +61,9 @@ kotlin {
         commonMain.dependencies {
             implementation("io.github.oshai:kotlin-logging:7.0.7")
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+
+            if (project.name != "kess-core")
+                implementation(project(":kess-core"))
         }
 
         commonTest.dependencies {
