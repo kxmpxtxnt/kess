@@ -2,6 +2,16 @@ package fyi.pauli.kess.piece
 
 import kotlin.jvm.JvmInline
 
+fun piece(id: Int): Piece = when(id) {
+    0 -> Pawn
+    1 -> Knight
+    2 -> Bishop
+    3 -> Rook
+    4 -> Queen
+    5 -> King
+    else -> throw IllegalStateException("Id must be between 0-5.")
+}
+
 @JvmInline
 value class Piece internal constructor(val id: Int) {
 
