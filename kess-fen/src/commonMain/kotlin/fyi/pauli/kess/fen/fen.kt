@@ -10,7 +10,6 @@ private operator fun List<String>.component6() = this[5]
 
 fun board(fen: String, body: Board.() -> Unit = {}): Board {
     val board = board()
-    var index = 0
 
     val pieces: Map<Char, Piece> = listOf(
         Pawn,
@@ -22,6 +21,8 @@ fun board(fen: String, body: Board.() -> Unit = {}): Board {
     ).associateBy(Piece::character)
 
     val (lineup, color, castling, enpassant, halfmove, fullmove) = fen.split(" ")
+
+    var index = 0
 
     lineup.forEach { character ->
         if (character == '/') return@forEach
